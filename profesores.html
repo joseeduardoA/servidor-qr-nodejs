@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sala de profesores</title>
+   <style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+        --primary: #0f2027;
+        --secondary: #203a43;
+        --accent: #2c5364;
+        --glow: #00f2fe;
+        --white: #ffffff;
+        background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 2rem 1rem;
+        color: var(--white);
+        overflow-x: hidden;
+    }
+
+    h1 {
+        color: var(--white);
+        text-align: center;
+        margin: 20px 0;
+        text-shadow: 0 0 10px var(--glow);
+        font-size: 2.2rem;
+        font-weight: 600;
+    }
+a {
+        color: var(--glow);
+        text-decoration: none;
+        margin-bottom: 10px;
+        transition: color 0.3s ease;
+    }
+    .elements {
+        margin-top: 20px;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+        max-width: 1000px;
+        width: 100%;
+    }
+
+    .elements a {
+        
+        text-decoration: none;
+    }
+
+    button {
+        flex-basis: 150px;
+        background: rgba(0, 255, 255, 0.1);
+        color: var(--white);
+        border: 1px solid var(--glow);
+        padding: 12px 18px;
+        border-radius: 12px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
+        backdrop-filter: blur(5px);
+    }
+
+    button:hover {
+        background: var(--glow);
+        color: var(--primary);
+        box-shadow: 0 0 20px var(--glow), 0 0 40px var(--glow);
+        transform: scale(1.05);
+    }
+</style>
+</head>
+<body >
+   
+
+
+    </div>
+    <a href="/">volver al Inicio</a>
+    <h1>Elige una Opción </h1>
+    <div class="elements">
+    <a href="agregarALumno.html"><button>agregar alumno</button></a>
+    <a href="Generar.html"><button>pasar lista</button></a>
+    </div>
+
+
+  
+
+</body>
+</html>

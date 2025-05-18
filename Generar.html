@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Escanear Codigo QR</title>
+  <script src="https://unpkg.com/html5-qrcode"></script>
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  body {
+    --bg-dark: #0f2027;
+    --bg-mid: #203a43;
+    --bg-light: #2c5364;
+    --glow: #00f2fe;
+    --white: #ffffff;
+    background: linear-gradient(135deg, var(--bg-dark), var(--bg-mid), var(--bg-light));
+    min-height: 100vh;
+    padding: 2rem;
+
+    color: var(--white);
+  }
+
+  a {
+    color: var(--glow);
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+
+  a:hover {
+    color: #ffffff;
+  }
+
+  h2 {
+    text-align: center;
+    margin: 20px 0;
+    color: var(--white);
+    text-shadow: 0 0 8px var(--glow);
+  }
+
+  .content {
+    position: relative;
+    margin: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+  }
+
+  .linea {
+    width: 200px;
+    background-color: var(--glow);
+    padding: 2px;
+    position: absolute;
+    z-index: 10;
+    animation: linea 3s infinite;
+    border-radius: 4px;
+    box-shadow: 0 0 10px var(--glow);
+  }
+
+  @keyframes linea {
+    0% {
+      top: 20px;
+    }
+    50% {
+      top: 200px;
+    }
+    100% {
+      top: 20px;
+    }
+  }
+
+  #reader {
+    width: 300px;
+    height: auto;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid var(--glow);
+    border-radius: 12px;
+    
+    box-shadow: 0 0 20px rgba(0, 242, 254, 0.2);
+  }
+
+  #resultado {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    text-shadow: 0 0 4px var(--glow);
+  }
+</style>
+</head>
+<body>
+  <a href="/">volver al Inicio</a>
+<a href="/profesores.html">regresar a la sala de profesores</a>
+  <!-- <br><a href="/DatosRecolectados">Ver personas recolectadas (JSON)</a> -->
+
+    <h2>Escanear código QR</h2>
+    <div class="content">
+        <div class="linea"></div>
+        <div id="reader" style="width:300px;"></div>
+    </div>
+    <!-- <p id="resultado"></p> -->
+    <script>
+        const resultado = document.getElementById("resultado");
+    
+        function onScanSuccess(decodedText, decodedResult) {
+          // resultado.textContent = `Contenido del QR: ${decodedText}`;
+          alert("Codigo QR escaneado correctamente")
+    
+          // Enviar al backend Node.js
+          fetch('/guardar-qr', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ qr: decodedText })  // decodedText debe ser una URL válida
+          })
+
+        }
+    
+        new Html5Qrcode("reader").start(
+          { facingMode: "environment" }, // cámara trasera
+          { fps: 10, qrbox: 250 },
+          onScanSuccess
+        );
+      </script>
+</body>
+</html>
