@@ -31,9 +31,15 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'Inicio.html'));
 });
 
+app.get('/allAlumnos.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'allAlumnos.html'));
+});
+
 app.get('/personas.json', (req, res) => {
   const personas = leerJSON(personasPath);
   res.json(personas);
+  
+
 });
 app.get('/alumnos.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'alumnos.html'));
@@ -50,7 +56,7 @@ app.post('/generar-qr', async (req, res) => {
     p.nombre === nombre &&
     parseInt(p.edad) === parseInt(edad) &&
     parseInt(p.id) === parseInt(id) &&
-    p.semestre === semestre
+    parseInt(p.semestre) ===  parseInt(semestre)
   );
   
   
@@ -95,19 +101,26 @@ app.post('/guardar-qr', async (req, res) => {
     const yaRegistrado = lista.some(p => p.id === persona.id);
 
 
-    // Obtener hora actual en Puebla con TimeZoneDB
-    const resHora = await fetch(`http://api.timezonedb.com/v2.1/get-time-zone?key=NXQ9L8DRVSOG&format=json&by=zone&zone=America/Mexico_City`);
-    const horaData = await resHora.json();
+    const fecha = new Date().toLocaleString("es-MX", {
+  timeZone: "America/Mexico_City",
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+  hour: "2-digit",
+  minute: "2-digit",
+  second: "2-digit"
+}).replace(",", "");
 
-    const horaCompleta = horaData.formatted; // Ejemplo: "2025-05-14 20:43:00"
-    const fecha = horaCompleta.split(" ")[0]; // Solo la fecha: "2025-05-14"
+const [dia, mes, añoHora] = fecha.split("/");
+const [año, hora] = añoHora.trim().split(" ");
+const horaCompleta = `${dia}/${mes} ${hora}`;
     
     lista.push({
       id: persona.id,
       nombre: persona.nombre,
-      email: persona.email,
+      edad: persona.edad,
       semestre: persona.semestre,
-      timestamp: fecha
+      timestamp: horaCompleta
     });
     guardarJSON(listaPath, lista);
 
@@ -121,6 +134,7 @@ app.post('/guardar-qr', async (req, res) => {
 app.get('/Lista.json', (req, res) => {
   const lista = leerJSON("Lista.json");
   res.json(lista);
+  
 });
 
 app.get('/agregarALumno.html', (req, res) => {
@@ -150,7 +164,7 @@ app.get('/personas/:id', (req, res) => {
     lista.push({
       id: persona.id,
       nombre: persona.nombre,
-      email: persona.email,
+      edad: persona.edad,
       timestamp: new Date().toISOString()
     });
     guardarJSON(listaPath, lista);
@@ -168,26 +182,36 @@ app.get('/DatosRecolectados', (req, res) => {
 });
 
 
-
-
 app.post("/personas.json", (req, res) => {
   const nuevaPersona = req.body;
 
-  let personas = [];
-  if (fs.existsSync(personasPath)) {
-    personas = JSON.parse(fs.readFileSync(personasPath));
+  // Validación básica y de tipos
+  if (
+    !nuevaPersona.id ||
+    !nuevaPersona.nombre ||
+    !nuevaPersona.edad ||
+    !nuevaPersona.semestre ||
+    !Number.isInteger(nuevaPersona.id) ||
+    typeof nuevaPersona.nombre !== 'string' ||
+    !Number.isInteger(nuevaPersona.edad) ||
+    !Number.isInteger(nuevaPersona.semestre)
+  ) {
+    return res.status(400).json({ message: "Datos incompletos o inválidos" });
   }
 
+  const personas = leerJSON(personasPath);
   const existe = personas.some(p => p.id === nuevaPersona.id);
 
   if (existe) {
-    return res.json({ message: "ID ya registrado. No se agregó." });
+    return res.status(400).json({ message: "ID ya registrado. No se agregó." });
   }
 
   personas.push(nuevaPersona);
-  fs.writeFileSync(personasPath, JSON.stringify(personas, null, 2));
+  guardarJSON(personasPath, personas);
   res.json({ message: "Persona guardada exitosamente." });
 });
+
+
 
 // Iniciar servidor
 app.listen(PORT, () => {

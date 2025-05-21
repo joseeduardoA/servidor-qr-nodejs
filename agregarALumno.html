@@ -158,7 +158,7 @@
       </label>
       <label>
         ID
-        <input type="text" id="id" required />
+        <input type="number" id="id" required />
       </label>
       <label>
         Semestre
@@ -187,7 +187,7 @@
         nombre: document.getElementById("nombre").value.trim(),
         edad: parseInt(document.getElementById("edad").value),
         id:  parseInt(document.getElementById("id").value.trim()),
-        semestre: document.getElementById("semestre").value
+        semestre: parseInt(document.getElementById("semestre").value)
       };
 
       try {

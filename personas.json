@@ -1,2 +1,26 @@
 [
+  {
+    "nombre": "José Eduardo Juaréz García",
+    "edad": 17,
+    "id": 4120070930,
+    "semestre": 4
+  },
+  {
+    "nombre": "Leonardo Flores Arellano",
+    "edad": 16,
+    "id": 4120081230,
+    "semestre": 4
+  },
+  {
+    "nombre": "Jimena Cosme Flores",
+    "edad": 17,
+    "id": 4120080515,
+    "semestre": 4
+  },
+  {
+    "nombre": "Christian Yair Ramírez Morales",
+    "edad": 17,
+    "id": 4120070531,
+    "semestre": 4
+  }
 ]

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabla de asistencia</title>
+    <title>Alumnos totales</title>
   <style>
   * {
     box-sizing: border-box;
@@ -24,7 +24,7 @@
     --color4: #393939;
 
     background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
-    min-height: 100vh;
+    height: 100vh;
    
     color: var(--white);
   }
@@ -35,22 +35,25 @@
     margin: 20px 0;
     text-shadow: 0 0 10px var(--glow);
   }
-  p{
-    margin: 20px;
-    text-align: center;
-  }
+ 
   a {
-    text-align: center;
     color: var(--glow);
+    padding: 20px;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
   }
 
+  a:hover {
+    color: #ffffff;
+  }
+
   .content {
     max-width: 900px;
+    max-height: 400px;
     margin: auto;
     overflow-x: auto;
+    scrollbar-width: none;
     padding: 20px;
   }
 
@@ -182,39 +185,40 @@
 
 </head>
 <body>
-    <p><a href="/">volver al Inicio</a></p>
-    <h1>Lista de alumnos asistidos</h1>
-    <div class="content">
-        <div class="content-item importante">
-            <p><strong data-key="id">id</strong></p>
-            <p><strong data-key="nombre">Nombre</strong></p>
-            <p><strong data-key="edad">dia asistido</strong></p>
-            <p><strong data-key="semestre">Semestre</strong></p>
-        </div>
+   <a href="/">Volver al Inicio</a> 
+   <a href="/profesores.html">regresar a la sala de profesores</a>
+<h1>Lista de alumnos en total</h1>
+
+<div class="content">
+    <div class="content-item importante">
+        <p><strong data-key="id">ID</strong></p>
+        <p><strong data-key="nombre">Nombre</strong></p>
+        <p><strong data-key="edad">Edad</strong></p>
+        <p><strong data-key="semestre">Semestre</strong></p>
     </div>
+</div>
 
 <script>
     const contenedor = document.querySelector(".content");
-    let elementsList = []; // ✅ Hacerla global para poder usarla en toda la página
+    let elementsList = [];
 
-    async function getelemnts() {
+    async function getElements() {
         try {
-            const elements = await fetch("/Lista.json");
-            elementsList = await elements.json(); // ✅ Guardar en la variable global
-            console.log(elementsList);
-            renderElements(elementsList); // ✅ Usar la función de render para pintar
+            const response = await fetch("personas.json");
+            elementsList = await response.json();
+            renderElements(elementsList);
         } catch (error) {
-            console.error("Error al cargar datos:", error);
+            console.log("Error al cargar datos:", error);
         }
     }
 
     function renderElements(list) {
-        // Limpiar los elementos anteriores excepto el encabezado
+        // Limpiar los elementos anteriores excepto el header
         contenedor.innerHTML = `
             <div class="content-item importante">
                 <p><strong data-key="id">ID</strong></p>
                 <p><strong data-key="nombre">Nombre</strong></p>
-                <p><strong data-key="timestamp">Fecha</strong></p>
+                <p><strong data-key="edad">Edad</strong></p>
                 <p><strong data-key="semestre">Semestre</strong></p>
             </div>
         `;
@@ -223,18 +227,19 @@
                 <div class="content-item">
                     <p><strong class="importantep">ID:</strong> ${element.id}</p>
                     <p><strong class="importantep">Nombre:</strong> ${element.nombre}</p>
-                    <p><strong class="importantep">Fecha:</strong> ${element.timestamp}</p>
+                    <p><strong class="importantep">Edad:</strong> ${element.edad} años</p>
                     <p><strong class="importantep">Semestre:</strong> ${element.semestre}</p>
                 </div>
             `;
         });
     }
 
-    // ✅ Escuchar clicks en los headers para ordenar
+    // Escuchar clicks en los headers para ordenar
     document.addEventListener("click", function (e) {
         const key = e.target.getAttribute("data-key");
         if (key) {
-            const isNumber = key === "id" || key === "semestre";
+            // Detectar tipo de dato para ordenar correctamente
+            const isNumber = key === "id" || key === "edad" || key === "semestre";
             const sortedList = [...elementsList].sort((a, b) => {
                 if (isNumber) {
                     return a[key] - b[key];
@@ -246,7 +251,7 @@
         }
     });
 
-    getelemnts();
+    getElements();
 </script>
 </body>
 </html>
