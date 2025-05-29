@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agregar Alumnos</title>
+ <style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  body {
+    --bg-dark: #0f2027;
+    --bg-mid: #203a43;
+    --bg-light: #2c5364;
+    --glow: #00f2fe;
+    --white: #ffffff;
+    background: linear-gradient(135deg, var(--bg-dark), var(--bg-mid), var(--bg-light));
+    min-height: 100vh;
+    padding: 2rem;
+  
+    justify-content: flex-start;
+    color: var(--white);
+  }
+
+  a {
+    color: var(--glow);
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+
+  a:hover {
+    color: #ffffff;
+  }
+
+  h1, h2 {
+    text-align: center;
+    margin: 20px 0;
+    color: var(--white);
+    text-shadow: 0 0 8px var(--glow);
+  }
+
+  .content {
+    max-width: 600px;
+    margin: auto;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    margin-top: 20px;
+  }
+
+  #formulario {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  #formulario label {
+    display: flex;
+    flex-direction: column;
+    color: var(--white);
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  #formulario label input,
+  #formulario label select {
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid var(--glow);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    backdrop-filter: blur(4px);
+  }
+
+  #formulario button {
+    background-color: rgba(0, 255, 255, 0.1);
+    border: 1px solid var(--glow);
+    color: var(--white);
+    padding: 12px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
+    backdrop-filter: blur(5px);
+    justify-self: center;
+    max-width: 300px;
+    width: 100%;
+  }
+
+  #formulario button:hover {
+    background-color: var(--glow);
+    color: var(--bg-dark);
+    box-shadow: 0 0 20px var(--glow), 0 0 40px var(--glow);
+    transform: scale(1.05);
+  }
+
+  #semestre option{
+    color: var(--bg-dark);
+  }
+
+  @media screen and (min-width: 700px) {
+    #formulario {
+      grid-template-areas:
+        "name edad"
+        "id semestre"
+        "button button";
+    }
+
+    #formulario label:first-child {
+      grid-area: name;
+    }
+
+    #formulario label:nth-child(2) {
+      grid-area: edad;
+    }
+
+    #formulario label:nth-child(3) {
+      grid-area: id;
+    }
+
+    #formulario label:nth-child(4) {
+      grid-area: semestre;
+    }
+
+    #formulario button {
+      grid-area: button;
+    }
+  }
+</style>
+</head>
+
+<body>
+  <a href="/">volver al Inicio</a>
+  <a href="/profesores.html">regresar a la sala de profesores</a>
+  <h1>Ingresa los datos del alumno</h1>
+  <div class="content">
+    <form id="formulario">
+      <label>
+        Nombre
+        <input type="text" id="nombre" required />
+      </label>
+      <label>
+        Edad
+        <input type="number" id="edad" required />
+      </label>
+      <label>
+        ID
+        <input type="number" id="id" required />
+      </label>
+      <label>
+        Semestre
+        <select id="semestre" required>
+          <option value="">Elije</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </label>
+
+      <button type="submit" class="enviar">Enviar</button>
+
+    </form>
+  
+  </div>
+  
+  <script>
+    document.getElementById("formulario").addEventListener("submit", async function(e) {
+      e.preventDefault();
+
+      const persona = {
+        nombre: document.getElementById("nombre").value.trim(),
+        edad: parseInt(document.getElementById("edad").value),
+        id:  parseInt(document.getElementById("id").value.trim()),
+        semestre: parseInt(document.getElementById("semestre").value)
+      };
+
+      try {
+        const res = await fetch("/personas.json", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(persona)
+        });
+
+        const data = await res.json();
+        alert(data.message);
+      } catch (err) {
+        alert("Error al guardar los datos");
+      }
+    });
+  </script>
+</body>
+</html>

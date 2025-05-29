@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumnos totales</title>
+  <style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  body {
+    --primary: #0f2027;
+    --secondary: #203a43;
+    --accent: #2c5364;
+    --glow: #00f2fe;
+    --white: #ffffff;
+    --color1: #a5b1e7;
+    --color2: #d2d8f3;
+    --color3: #ffffff;
+    --color4: #393939;
+
+    background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+    min-height: 100vh;
+
+
+    color: var(--white);
+  }
+
+   
+
+  h1 {
+    color: var(--white);
+    text-align: center;
+    margin: 20px 0;
+    text-shadow: 0 0 10px var(--glow);
+  }
+ 
+  a {
+    color: var(--glow);
+    padding: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+
+  a:hover {
+    color: #ffffff;
+  }
+
+  .content {
+    max-width: 900px;
+    max-height: 480px;
+    margin: auto;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding: 20px;
+  }
+
+  .content-item {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 10px;
+    gap: 10px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--white);
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    backdrop-filter: blur(10px);
+  }
+
+  .importante {
+    background-color: var(--white);
+    color: var(--color4);
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 6px;
+  }
+
+  .importantep {
+    display: none;
+  }
+
+  .content-item p{
+    margin: 0px;
+    text-align: left;
+  }
+
+  /* Estilo para móviles */
+  @media screen and (max-width: 500px) {
+    .content-item {
+      grid-template-columns: 1fr;
+      background-color: rgba(255, 255, 255, 0.1);
+      font-weight: normal;
+    }
+
+    .content-item p::before {
+      content: attr(data-label);
+      font-weight: bold;
+      display: block;
+      color: var(--white);
+    }
+
+    .importante {
+      display: none;
+    }
+
+    .importantep {
+      display: block;
+    }
+  }
+
+  /* Estilo de la alerta */
+  .alert {
+    width: 90%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 40px 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .alert h2 {
+    font-size: 1.8rem;
+    text-shadow: 0 0 10px var(--glow);
+    text-align: center;
+  }
+
+  .alert a {
+    color: var(--glow);
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+  }
+
+  .alert a:hover {
+    color: var(--white);
+  }
+
+  .alert input {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 1rem;
+    border: 1px solid var(--glow);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    outline: none;
+    backdrop-filter: blur(5px);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .alert input:focus {
+    box-shadow: 0 0 15px var(--glow);
+  }
+
+  .alert button {
+    background: rgba(0, 255, 255, 0.1);
+    color: var(--white);
+    border: 1px solid var(--glow);
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
+    backdrop-filter: blur(5px);
+  }
+
+  .alert button:hover {
+    background: var(--glow);
+    color: var(--primary);
+    box-shadow: 0 0 20px var(--glow), 0 0 40px var(--glow);
+    transform: scale(1.05);
+  }
+</style>
+
+</head>
+<body>
+   <a href="/">Volver al Inicio</a> 
+   <a href="/profesores.html">regresar a la sala de profesores</a>
+  
+<h1>Lista de alumnos en total</h1>
+
+<div class="content">
+    <div class="content-item importante">
+        <p><strong data-key="id">ID</strong></p>
+        <p><strong data-key="nombre">Nombre</strong></p>
+        <p><strong data-key="edad">Edad</strong></p>
+        <p><strong data-key="semestre">Semestre</strong></p>
+    </div>
+</div>
+
+<script>
+    const contenedor = document.querySelector(".content");
+    let elementsList = [];
+
+    async function getElements() {
+        try {
+            const response = await fetch("personas.json");
+            elementsList = await response.json();
+            renderElements(elementsList);
+        } catch (error) {
+            console.log("Error al cargar datos:", error);
+        }
+    }
+
+    function renderElements(list) {
+
+      function capitalizar(str) {
+  return str
+    .toLowerCase()
+    .split(' ')
+    .map(palabra => palabra.charAt(0).toUpperCase() + palabra.slice(1))
+    .join(' ');
+}
+        // Limpiar los elementos anteriores excepto el header
+        contenedor.innerHTML = `
+            <div class="content-item importante">
+                <p><strong data-key="id">ID</strong></p>
+                <p><strong data-key="nombre">Nombre</strong></p>
+                <p><strong data-key="edad">Edad</strong></p>
+                <p><strong data-key="semestre">Semestre</strong></p>
+            </div>
+        `;
+        list.forEach(element => {
+            contenedor.innerHTML += `
+                <div class="content-item">
+                    <p><strong class="importantep">ID:</strong> ${element.id}</p>
+                    <p><strong class="importantep">Nombre:</strong> ${capitalizar(element.nombre)}</p>
+                    <p><strong class="importantep">Edad:</strong> ${element.edad} años</p>
+                    <p><strong class="importantep">Semestre:</strong> ${element.semestre}</p>
+                </div>
+            `;
+        });
+    }
+
+    // Escuchar clicks en los headers para ordenar
+    document.addEventListener("click", function (e) {
+        const key = e.target.getAttribute("data-key");
+        if (key) {
+            // Detectar tipo de dato para ordenar correctamente
+            const isNumber = key === "id" || key === "edad" || key === "semestre";
+            const sortedList = [...elementsList].sort((a, b) => {
+                if (isNumber) {
+                    return a[key] - b[key];
+                } else {
+                    return a[key].localeCompare(b[key]);
+                }
+            });
+            renderElements(sortedList);
+        }
+    });
+
+    getElements();
+</script>
+</body>
+</html>

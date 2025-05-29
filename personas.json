@@ -1,0 +1,710 @@
+[
+  {
+    "nombre": "CABRERA GOCHES DANNA CAMILA",
+    "edad": 0,
+    "id": 21029,
+    "semestre": 2
+  },
+  {
+    "nombre": "CANUTO FLORES BRUNO ELIAS",
+    "edad": 0,
+    "id":  21056,
+    "semestre": 2
+  },
+  {
+    "nombre": "CARRANZA TENORIO JESUS",
+    "edad": 0,
+    "id": 21062,
+    "semestre": 2
+  },
+  {
+    "nombre": "CONTRERAS RIOS NERY",
+    "edad": 0,
+    "id": 21119,
+    "semestre": 2
+  },
+  {
+    "nombre": "DIAZ HUERTA BARBARA AYELEM",
+    "edad": 0,
+    "id": 21131,
+    "semestre": 2
+  },
+  {
+    "nombre": "DURAN VAZQUEZ IAN SINAÍ",
+    "edad": 0,
+    "id": 21329,
+    "semestre": 2
+  },
+  {
+    "nombre": "ESPINOZA MELENDEZ ALAN JOSUE",
+    "edad": 0,
+    "id": 21141,
+    "semestre": 2
+  },
+  {
+    "nombre": "ESPINOSA RUIZ RAUL",
+    "edad": 0,
+    "id": 21217,
+    "semestre": 2
+  },
+  {
+    "nombre": "GARCÍA GAONA YOCELIN",
+    "edad": 0,
+    "id": 21236,
+    "semestre": 2
+  },
+  {
+    "nombre": "HERNANDEZ SANTIAGO TANIA",
+    "edad": 0,
+    "id": 21247,
+    "semestre": 2
+  },
+  {
+    "nombre": "JUAREZ BRAVO VALERIA NICOLE",
+    "edad": 0,
+    "id": 21424,
+    "semestre": 2
+  },
+  {
+    "nombre": "JUAREZ NATIVITAS CARLOS ENRIQUE",
+    "edad": 0,
+    "id": 21468,
+    "semestre": 2
+  },
+  {
+    "nombre": "JUAREZ PEREZ ARTURO",
+    "edad": 15,
+    "id": 21469,
+    "semestre": 2
+  },
+  {
+    "nombre": "JUAREZ PEREZ AZAREL JOVANI",
+    "edad": 0,
+    "id": 21521,
+    "semestre": 2
+  },
+  {
+    "nombre": "LOPEZ MONTIEL MARIANA",
+    "edad": 0,
+    "id": 21596,
+    "semestre": 2
+  },
+  {
+    "nombre": "MARTINEZ LOPEZ ABRIL",
+    "edad": 0,
+    "id": 21606,
+    "semestre": 2
+  },
+  {
+    "nombre": "PALACIOS OLAN KIMBERLY MICHELLE",
+    "edad": 0,
+    "id": 21614,
+    "semestre": 2
+  },
+  {
+    "nombre": "PAREDES TORRES ISAAC",
+    "edad": 0,
+    "id": 21662,
+    "semestre": 2
+  },
+  {
+    "nombre": "PEÑA HERNANDEZ ATENA DEL ANGEL",
+    "edad": 0,
+    "id":  21698,
+    "semestre": 2
+  },
+  {
+    "nombre": "PEREZ CENTENO EDGAR",
+    "edad": 0,
+    "id": 21705,
+    "semestre": 2
+  },
+  {
+    "nombre": "SALGADO BECERRA ALAN",
+    "edad": 0,
+    "id": 21784,
+    "semestre": 2
+  },
+  {
+    "nombre": "SANCHEZ CARRILLO JARED SAID",
+    "edad": 0,
+    "id": 21845,
+    "semestre": 2
+  },
+  {
+    "nombre": "SANCHEZ MORALES JULIAN ANTONIO",
+    "edad": 0,
+    "id": 21845,
+    "semestre": 2
+  },
+  { 
+    "nombre": "ABASCAL DE LA ROSA RENATA",
+   "edad": 0,
+    "id": 22007,
+     "semestre": 2
+     },
+  { 
+    "nombre": "AGUILAR TORRES ANGEL",
+   "edad": 0,
+    "id": 22059,
+     "semestre": 2
+     },
+  { 
+    "nombre": "BECERRIL ZACAHUA LORENA",
+   "edad": 0,
+    "id": 22084,
+     "semestre": 2
+     },
+  { 
+    "nombre": "CHAMORRO MARTINEZ ANGEL GABRIEL",
+   "edad": 0,
+    "id": 22136,
+     "semestre": 2
+     },
+  { 
+    "nombre": "CHAZARI PINEDA LUIS ANGEL",
+   "edad": 0,
+    "id": 22174,
+     "semestre": 2
+     },
+  { 
+    "nombre": "CONTRERAS GASPARIANO ALONDRA",
+   "edad": 0,
+    "id": 22185,
+     "semestre": 2
+     },
+  { 
+    "nombre": "CUAYA CORTES JACIEL",
+   "edad": 0,
+    "id": 22200,
+     "semestre": 2
+     },
+  { 
+    "nombre": "DURAN VAZQUEZ ARIEL KALETH",
+   "edad": 0,
+    "id": 22234,
+     "semestre": 2
+     },
+  { 
+    "nombre": "FLORES RIVERA ARAN JOSEPH",
+   "edad": 0,
+    "id": 22298,
+     "semestre": 2
+     },
+  { 
+    "nombre": "GOCHES CAMACHO SAID",
+   "edad": 0,
+    "id": 22315,
+     "semestre": 2
+     },
+  { 
+    "nombre": "HERNANDEZ ORTEGA NAOMI YOSELIN",
+   "edad": 0,
+    "id": 22351,
+     "semestre": 2
+     },
+  { 
+    "nombre": "HERNANDEZ REYES LUIS ENRIQUE",
+   "edad": 0,
+    "id": 22397,
+     "semestre": 2
+     },
+  { 
+    "nombre": "LÓPEZ MARTINEZ ESTEFANI",
+   "edad": 0,
+    "id": 22426,
+     "semestre": 2
+     },
+  { 
+    "nombre": "MEZA GARCIA OSCAR YARET",
+   "edad": 0,
+    "id": 22479,
+     "semestre": 2
+     },
+  { 
+    "nombre": "PAZ GARCÍA EVELYN PAOLA",
+   "edad": 0,
+    "id": 22502,
+     "semestre": 2
+     },
+  { 
+    "nombre": "PEREZ MONTIEL YOSELYN",
+   "edad": 0,
+    "id": 22583,
+     "semestre": 2
+     },
+  { 
+    "nombre": "PLATA AGUILAR ANA KAREN",
+   "edad": 0,
+    "id": 22618,
+     "semestre": 2
+     },
+  { 
+    "nombre": "RAMIREZ BELLO LUIS MARIO",
+   "edad": 0,
+    "id": 22674,
+     "semestre": 2
+     },
+  { 
+    "nombre": "RAMIREZ GARCÍA ZARA ROXANA",
+   "edad": 0,
+    "id": 22708,
+     "semestre": 2
+     },
+  { 
+    "nombre": "RAMOS RODRIGUEZ LUIS ALBERTO",
+   "edad": 0,
+    "id": 22792,
+     "semestre": 2
+     },
+  { 
+    "nombre": "RIVERA SOTO JOSE MIGUEL",
+   "edad": 0,
+    "id": 22813,
+     "semestre": 2
+     },
+  { 
+    "nombre": "RUGERIO DE LA FUENTE DANIELA",
+   "edad": 0,
+    "id": 22867,
+     "semestre": 2
+     },
+  { 
+    "nombre": "TEUTLE HERNANDEZ LUZ MARIA",
+   "edad": 0,
+    "id": 22904,
+     "semestre": 2
+     },
+  { 
+    "nombre": "VIANA SAENZ VALENTIN OMAR",
+   "edad": 0,
+    "id": 22946,
+     "semestre": 2
+     },
+  { 
+    "nombre": "ZAMBRANO ARMAS ALEXANDER",
+   "edad": 0,
+    "id": 22987,
+     "semestre": 2
+     },
+     {
+    "nombre": "ANDRADE CORTES RAFAEL",
+    "edad": 18,
+    "id": 61001,
+    "semestre": 6
+  },
+  {
+    "nombre": "AQUINO MARTINEZ YESENIA",
+    "edad": 20,
+    "id": 61027,
+    "semestre": 6
+  },
+  {
+    "nombre": "BRAVO MEZA JOSE LUIS",
+    "edad": 18,
+    "id": 61035,
+    "semestre": 6
+  },
+  {
+    "nombre": "BRAVO MEZA JULIO CESAR",
+    "edad": 19,
+    "id": 61042,
+    "semestre": 6
+  },
+  {
+    "nombre": "BRUNO MARTINEZ URIEL",
+    "edad": 18,
+    "id": 61063,
+    "semestre": 6
+  },
+  {
+    "nombre": "CARREON MENDEZ MIGUEL ANGEL",
+    "edad": 18,
+    "id": 61074,
+    "semestre": 6
+  },
+  {
+    "nombre": "COLOTL BONILLA JULIO CESAR",
+    "edad": 18,
+    "id": 61074,
+    "semestre": 6
+  },
+  {
+    "nombre": "CRUZ GONZALEZ FATIMA LUCIA",
+    "edad": 18,
+    "id": 61109,
+    "semestre": 6
+  },
+  {
+    "nombre": "GARCIA RODRIGUEZ DIANA",
+    "edad": 18,
+    "id": 61117,
+    "semestre": 6
+  },
+  {
+    "nombre": "GOMEZ DE GANTE ALAN OMAR",
+    "edad": 18,
+    "id": 61128,
+    "semestre": 6
+  },
+  {
+    "nombre": "GOMEZ TONACATL ERICK",
+    "edad": 18,
+    "id": 61136,
+    "semestre": 6
+  },
+  {
+    "nombre": "GONZALEZ DOMINGUEZ JARED",
+    "edad": 18,
+    "id": 61149,
+    "semestre": 6
+  },
+  {
+    "nombre": "GUEVARA GARCIA REBECA",
+    "edad": 20,
+    "id": 61153,
+    "semestre": 6
+  },
+  {
+    "nombre": "HERNANDEZ REYES JOCELYN",
+    "edad": 18,
+    "id": 61164,
+    "semestre": 6
+  },
+  {
+    "nombre": "HERRERA REYES SERGIO ANGEL",
+    "edad": 17,
+    "id": 61170,
+    "semestre": 6
+  },
+  {
+    "nombre": "HUERTA TRUJILLO JONATHAN",
+    "edad": 18,
+    "id": 61181,
+    "semestre": 6
+  },
+  {
+    "nombre": "IBAÑEZ VAZQUEZ KENIA ABRIL",
+    "edad": 18,
+    "id": 61205,
+    "semestre": 6
+  },
+  {
+    "nombre": "LIMON SANCHEZ DULCE MARIA",
+    "edad": 18,
+    "id": 61212,
+    "semestre": 6
+  },
+  {
+    "nombre": "MARTINEZ TLAPALTOTOLI ANGEL YAHEL",
+    "edad": 18,
+    "id": 61223,
+    "semestre": 6
+  },
+  {
+    "nombre": "PARRA DIEGO OLIVER ACXEL",
+    "edad": 18,
+    "id": 61237,
+    "semestre": 6
+  },
+  {
+    "nombre": "PEREZ BELLO OMAR",
+    "edad": 18,
+    "id": 61248,
+    "semestre": 6
+  },
+  {
+    "nombre": "RAMIREZ MONTALVO CARLOS JAVIER",
+    "edad": 18,
+    "id": 61259,
+    "semestre": 6
+  },
+  {
+    "nombre": "RODRIGUEZ FLORES JAQUELINE",
+    "edad": 18,
+    "id": 61266,
+    "semestre": 6
+  },
+  {
+    "nombre": "ROJAS GONZALEZ ANIA",
+    "edad": 18,
+    "id": 61275,
+    "semestre": 6
+  },
+  {
+    "nombre": "ROMERO CATANA JULIA",
+    "edad": 18,
+    "id": 61288,
+    "semestre": 6
+  },
+  {
+    "nombre": "ROSAS MELENDEZ ARIANA",
+    "edad": 18,
+    "id": 61300,
+    "semestre": 6
+  },
+  {
+    "nombre": "SANTIAGO MORALES BRAYAN",
+    "edad": 18,
+    "id": 61314,
+    "semestre": 6
+  },
+  {
+    "nombre": "VELEZ CERVANTES MAYTE ALONDRA",
+    "edad": 18,
+    "id": 61326,
+    "semestre": 6
+  },
+  {
+    "nombre": "VICARIO SANCHEZ ASHLEE AZUL",
+    "edad": 18,
+    "id": 61331,
+    "semestre": 6
+  },
+  {
+    "nombre": "Amado Flores Fatima Maiye",
+    "edad": 18,
+    "id":41037,
+    "semestre": 4
+  },
+  {
+    "nombre": "Betanzos Hernandez Marlene",
+    "edad": 17,
+    "id": 41046,
+    "semestre": 4
+  },
+  {
+    "nombre": "Calpulalpan Ortega Evolet",
+    "edad": 17,
+    "id": 41063,
+    "semestre": 4
+  },
+  {
+    "nombre": "Cardenas Cabrera Menajem Yitzjak",
+    "edad": 18,
+    "id": 41082,
+    "semestre": 4
+  },
+  {
+    "nombre": "Cazales Gonzalez Zoe",
+    "edad": 18,
+    "id":41127,
+    "semestre": 4
+  },
+  {
+    "nombre": "Cervantes Olvera Brian David",
+    "edad": 17,
+    "id":41136,
+    "semestre": 4
+  },
+  {
+    "nombre": "Colula Jimarez Francisco Rene",
+    "edad": 17,
+    "id": 41181,
+    "semestre": 4
+  },
+  {
+    "nombre": "Cosme Flores Jimena",
+    "edad": 17,
+    "id": 41213,
+    "semestre": 4
+  },
+  {
+    "nombre": "Del Rosario Jaramillo Andrea",
+    "edad": 17,
+    "id":41224,
+    "semestre": 4
+  },
+  {
+    "nombre": "Escalona Arenas Amairani",
+    "edad": 17,
+    "id": 41230,
+    "semestre": 4
+  },
+  {
+    "nombre": "Espinoza Melendez Nahomy Isabella",
+    "edad": 18,
+    "id": 41291,
+    "semestre": 4
+  },
+  {
+    "nombre": "Flores Arellano Leonardo",
+    "edad": 16,
+    "id": 41308,
+    "semestre": 4
+  },
+  {
+    "nombre": "Flores Melo Nirvana",
+    "edad": 17,
+    "id": 41334,
+    "semestre": 4
+  },
+  {
+    "nombre": "Flores Moreno Maria Fernanda",
+    "edad": 18,
+    "id": 41363,
+    "semestre": 4
+  },
+  {
+    "nombre": "García Gomez Erick",
+    "edad": 18,
+    "id": 41398,
+    "semestre": 4
+  },
+  {
+    "nombre": "Gonzalez Guillermo Hilary",
+    "edad": 18,
+    "id": 41400,
+    "semestre": 4
+  },
+  {
+    "nombre": "Hernandez Martinez Juan Carlos",
+    "edad": 19,
+    "id": 41411,
+    "semestre": 4
+  },
+  {
+    "nombre": "Juarez Garcia Jose Eduardo",
+    "edad": 17,
+    "id": 41449,
+    "semestre": 4
+  },
+  {
+    "nombre": "Juarez Luis Abraham",
+    "edad": 18,
+    "id": 41459,
+    "semestre": 4
+  },
+  {
+    "nombre": "Landa Torres Vania",
+    "edad": 17,
+    "id": 41516,
+    "semestre": 4
+  },
+  {
+    "nombre": "Luna Luna José Ruben",
+    "edad": 17,
+    "id": 41528,
+    "semestre": 4
+  },
+  {
+    "nombre": "Mayoral Perez Ana Larisa",
+    "edad": 17,
+    "id": 41533,
+    "semestre": 4
+  },
+  {
+    "nombre": "Monarca Morales Jesus Ricardo",
+    "edad": 17,
+    "id": 41586,
+    "semestre": 4
+  },
+  {
+    "nombre": "Muñoz Galindo Illany Yexalen",
+    "edad": 17,
+    "id": 41604,
+    "semestre": 4
+  },
+  {
+    "nombre": "Olvera Salas Denisse Arely",
+    "edad": 17,
+    "id":41625,
+    "semestre": 4
+  },
+  {
+    "nombre": "Perez Garcia Angel De Jesus",
+    "edad": 17,
+    "id": 41633,
+    "semestre": 4
+  },
+  {
+    "nombre": "Perez Varillas Pamela Margarita",
+    "edad": 17,
+    "id":41682,
+    "semestre": 4
+  },
+  {
+    "nombre": "Perez Zonotl Jose Alberto",
+    "edad": 17,
+    "id":41718,
+    "semestre": 4
+  },
+  {
+    "nombre": "Ramirez Morales Christian Yair",
+    "edad": 18,
+    "id": 41722,
+    "semestre": 4
+  },
+  {
+    "nombre": "Ramirez Perez Natasha",
+    "edad": 20,
+    "id":41771,
+    "semestre": 4
+  },
+  {
+    "nombre": "Reyes Razo Arturo",
+    "edad": 17,
+    "id": 41793,
+    "semestre": 4
+  },
+  {
+    "nombre": "Rojas Gomez Adan Nazario",
+    "edad": 17,
+    "id": 41805,
+    "semestre": 4
+  },
+  {
+    "nombre": "Rodriguez Morales Geovanny",
+    "edad": 17,
+    "id": 41827,
+    "semestre": 4
+  },
+  {
+    "nombre": "Rodriguez Ramirez Vianey Berenice",
+    "edad": 18,
+    "id": 41833,
+    "semestre": 4
+  },
+  {
+    "nombre": "Rojano Morales Samanta Hiromi",
+    "edad": 18,
+    "id": 41857,
+    "semestre": 4
+  },
+  {
+    "nombre": "Sanchez Carrillo Eder Ariel",
+    "edad": 17,
+    "id": 41884,
+    "semestre": 4
+  },
+  {
+    "nombre": "Sanchez Lopez Jhonatan",
+    "edad": 17,
+    "id": 41896,
+    "semestre": 4
+  },
+  {
+    "nombre": "Tirzo Fuentes Edson Misael",
+    "edad": 17,
+    "id": 41903,
+    "semestre": 4
+  },
+  {
+    "nombre": "Torres Lopez Gustavo Mijael",
+    "edad": 17,
+    "id": 41910,
+    "semestre": 4
+  },
+  {
+    "nombre": "Tovar Barrales Harold",
+    "edad": 19,
+    "id": 41932,
+    "semestre": 4
+  },
+  {
+    "nombre": "Zepeda Mateo Rafael",
+    "edad": 17,
+    "id":41945,
+    "semestre": 4
+  }
+]
